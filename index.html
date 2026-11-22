@@ -1,113 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Electrical Design Engineer portfolio — selected projects, technical skills, and contact details." />
-  <title>Mohamed Abdelbaky | Electrical Design Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Electrical Engineering Portfolio of Mohamed Abdelbaky">
+  <title>Mohamed Abdelbaky | Electrical Engineer</title>
   <style>
-    :root { --navy:#112744; --blue:#1e69aa; --cyan:#2bb0d2; --ink:#243447; --muted:#6a7a8c; --bg:#f4f8fb; --line:#dce7ef; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.6; }
-    a { color:inherit; text-decoration:none; }
-    .nav { position:sticky; top:0; z-index:5; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 6vw; background:rgba(17,39,68,.97); color:white; }
-    .brand { font-weight:800; letter-spacing:.04em; white-space:nowrap; }
-    .brand span { color:var(--cyan); }
-    .navlinks { display:flex; gap:1.25rem; flex-wrap:wrap; font-size:.92rem; }
-    .navlinks a:hover { color:var(--cyan); }
-    .hero { min-height:78vh; display:grid; grid-template-columns:1.2fr .8fr; align-items:center; gap:3rem; padding:5rem 8vw; color:white; background:radial-gradient(circle at 80% 20%,#234e78 0,transparent 30%),linear-gradient(135deg,#112744,#0b1b30); overflow:hidden; }
-    .eyebrow { color:var(--cyan); font-weight:800; text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; }
-    h1 { font-size:clamp(2.6rem,5.5vw,5rem); line-height:1.05; margin:.8rem 0 1.25rem; letter-spacing:-.04em; }
-    .hero p { color:#d6e3ee; font-size:1.12rem; max-width:650px; }
-    .actions { display:flex; gap:.8rem; flex-wrap:wrap; margin-top:2rem; }
-    .btn { display:inline-block; padding:.85rem 1.2rem; border-radius:8px; font-weight:750; border:1px solid var(--cyan); }
-    .btn.primary { background:var(--cyan); color:#09223b; }
-    .btn.secondary { color:white; }
-    .hero-art { min-height:320px; border:1px solid #355574; border-radius:24px; padding:1.4rem; position:relative; background:linear-gradient(145deg,rgba(43,176,210,.12),rgba(255,255,255,.02)); }
-    .grid-art { height:100%; min-height:280px; border-radius:14px; background-image:linear-gradient(#47708d55 1px,transparent 1px),linear-gradient(90deg,#47708d55 1px,transparent 1px); background-size:28px 28px; position:relative; overflow:hidden; }
-    .wire { position:absolute; border:2px solid var(--cyan); opacity:.9; }
-    .wire.one { width:60%; height:52%; left:14%; top:20%; border-right:0; border-bottom:0; }
-    .wire.two { width:43%; height:32%; right:12%; bottom:13%; border-left:0; border-top:0; }
-    .node { position:absolute; width:12px; height:12px; background:var(--cyan); border-radius:50%; box-shadow:0 0 0 7px #2bb0d222; }
-    .node.a { left:14%; top:20%; }.node.b { left:73%; top:20%; }.node.c { left:14%; top:72%; }.node.d { right:12%; bottom:13%; }
-    .art-label { position:absolute; bottom:1.2rem; left:1.2rem; right:1.2rem; padding:.8rem 1rem; background:#102943dd; border:1px solid #355574; border-radius:10px; font-size:.85rem; color:#dceaf3; }
-    section { padding:5rem 8vw; }
-    .section-head { max-width:720px; margin-bottom:2rem; }
-    .section-head h2 { margin:.4rem 0; color:var(--navy); font-size:clamp(2rem,3vw,3rem); line-height:1.1; }
-    .section-head p { color:var(--muted); }
-    .about-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; align-items:start; }
-    .panel { padding:1.5rem; border:1px solid var(--line); border-radius:16px; background:var(--bg); }
-    .panel h3 { margin-top:0; color:var(--navy); }
-    .chips { display:flex; gap:.55rem; flex-wrap:wrap; }
-    .chip { padding:.5rem .8rem; border:1px solid #c8deea; border-radius:999px; color:var(--blue); background:#fff; font-size:.9rem; font-weight:700; }
-    .skills { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
-    .skill { border:1px solid var(--line); border-radius:14px; padding:1.25rem; background:white; }
-    .skill .num { color:var(--cyan); font-size:.8rem; font-weight:900; }
-    .skill h3 { color:var(--navy); font-size:1.05rem; margin:.45rem 0; }
-    .skill p { color:var(--muted); font-size:.9rem; margin:0; }
-    .projects { background:var(--bg); }
-    .project-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
-    .project { background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; }
-    .project-visual { min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:1.4rem; color:var(--blue); background:linear-gradient(135deg,#eaf4f9,#dcebf3); border-bottom:1px solid var(--line); }
-    .project-visual .plus { font-size:2.7rem; font-weight:300; line-height:1; }
-    .project-visual strong { margin-top:.6rem; color:var(--navy); }
-    .project-body { padding:1.35rem; }
-    .project-body h3 { margin:.1rem 0 .5rem; color:var(--navy); }
-    .project-body p { color:var(--muted); margin:.3rem 0 1rem; }
-    .tag { display:inline-block; font-size:.78rem; font-weight:800; padding:.3rem .55rem; border-radius:6px; color:#12608a; background:#e5f6fb; }
-    .project-controls { display:flex; gap:.6rem; flex-wrap:wrap; }
-    .small-btn { cursor:pointer; font:inherit; font-size:.85rem; font-weight:750; padding:.55rem .8rem; border-radius:7px; border:1px solid var(--line); background:white; color:var(--blue); }
-    .small-btn:hover { border-color:var(--cyan); }
-    .contact { background:var(--navy); color:white; }
-    .contact .section-head h2 { color:white; }
-    .contact .section-head p { color:#c8d8e6; }
-    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
-    .contact-card { border:1px solid #355574; background:#183654; padding:1.2rem; border-radius:12px; }
-    .contact-card small { color:var(--cyan); font-weight:800; letter-spacing:.1em; }
-    .contact-card div { margin-top:.3rem; overflow-wrap:anywhere; }
-    footer { padding:1.2rem 8vw; background:#0b1b30; color:#9fb4c8; font-size:.85rem; display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
-    .hint { font-size:.88rem; color:var(--muted); }
-    @media(max-width:850px) { .hero,.about-grid { grid-template-columns:1fr; } .hero { padding-top:4rem; } .hero-art { min-height:280px; } .skills { grid-template-columns:repeat(2,1fr); } .project-grid,.contact-grid { grid-template-columns:1fr; } .nav { align-items:flex-start; flex-direction:column; } .navlinks { gap:.8rem; } }
-    @media(max-width:480px) { section { padding:3.5rem 6vw; } .hero { padding:3.5rem 6vw; } .skills { grid-template-columns:1fr; } .navlinks { font-size:.82rem; } }
+    :root{--navy:#0b1f3a;--blue:#1769aa;--sky:#eaf4ff;--ink:#172437;--muted:#617187;--white:#fff;--line:#dce6f0}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f7faff;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92%);margin:auto}
+    header{background:var(--navy);color:white;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #07152a25}
+    nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:800;font-size:1.05rem;letter-spacing:.2px}
+    .brand span{color:#75c5ff}
+    .navlinks{display:flex;gap:24px;flex-wrap:wrap;font-size:.92rem;color:#e3edf8}
+    .navlinks a:hover{color:#75c5ff}
+    .hero{background:linear-gradient(125deg,#0b1f3a 0%,#123e6b 65%,#1769aa 100%);color:white;padding:94px 0 88px;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;width:380px;height:380px;border:1px solid #ffffff24;border-radius:50%;right:-100px;top:-130px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}
+    .hero-content{position:relative;z-index:1;max-width:760px}
+    .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.8rem;color:#9bd6ff;font-weight:700;margin-bottom:14px}
+    h1{font-size:clamp(2.35rem,6vw,4.3rem);line-height:1.1;margin-bottom:18px;letter-spacing:-1.5px}
+    .hero p{font-size:1.15rem;color:#e0ecf8;max-width:650px;margin-bottom:28px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 19px;border-radius:7px;font-weight:700;border:1px solid transparent;transition:.2s}
+    .btn-primary{background:#fff;color:var(--navy)}.btn-primary:hover{background:#dff1ff}
+    .btn-outline{border-color:#ffffff80;color:white}.btn-outline:hover{background:#ffffff15}
+    section{padding:72px 0}
+    .section-head{margin-bottom:28px}
+    .section-head .eyebrow{color:var(--blue);margin-bottom:7px}
+    h2{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--navy);line-height:1.2}
+    .intro{color:var(--muted);max-width:760px;margin-top:12px}
+    .about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:stretch}
+    .card{background:white;border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:0 8px 24px #102d4b08}
+    .card h3{color:var(--navy);margin-bottom:10px}
+    .highlight{background:var(--sky);border-left:4px solid var(--blue);padding:18px;border-radius:8px;margin-top:18px;color:#29415d}
+    .stats{display:grid;gap:12px}
+    .stat{padding:18px;background:white;border:1px solid var(--line);border-radius:12px}
+    .stat strong{display:block;color:var(--blue);font-size:1.1rem}
+    .stat span{color:var(--muted);font-size:.9rem}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill-card{background:white;border:1px solid var(--line);padding:23px;border-radius:12px}
+    .skill-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:10px;background:var(--sky);color:var(--blue);font-weight:800;font-size:1.1rem;margin-bottom:14px}
+    .skill-card h3{color:var(--navy);margin-bottom:7px}
+    .skill-card p{color:var(--muted);font-size:.95rem}
+    .projects{background:#eef5fc}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .project-card{background:white;border:1px dashed #9eb6ce;border-radius:14px;padding:26px}
+    .project-card .tag{display:inline-block;background:var(--sky);color:var(--blue);font-size:.78rem;font-weight:700;padding:5px 9px;border-radius:20px;margin-bottom:14px}
+    .project-card h3{color:var(--navy);margin-bottom:8px}
+    .project-card p{color:var(--muted)}
+    .contact-box{background:var(--navy);color:white;border-radius:16px;padding:36px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+    .contact-box h2{color:white;margin-bottom:10px}
+    .contact-box p{color:#d5e5f5;max-width:650px}
+    footer{background:#07152a;color:#b8c8da;padding:24px 0;text-align:center;font-size:.88rem}
+    @media(max-width:760px){nav{padding:14px 0;align-items:flex-start;flex-direction:column}.navlinks{gap:14px}.hero{padding:70px 0}.about-grid,.skills-grid,.project-grid{grid-template-columns:1fr}.contact-box{align-items:flex-start;flex-direction:column}section{padding:54px 0}}
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <a class="brand" href="#home">MA<span>.</span> PORTFOLIO</a>
-    <div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
-  </nav>
-  <header class="hero" id="home">
-    <div><div class="eyebrow">Electrical Engineering Portfolio</div><h1>Mohamed Abdelbaky</h1>
-      <div style="font-size:clamp(1.1rem,2vw,1.55rem);font-weight:750;color:#dceaf3">Electrical Design Engineer</div>
-      <p>I present electrical design work, technical drawings, calculations, and selected engineering projects. Explore my portfolio and professional skills.</p>
-      <div class="actions"><a class="btn primary" href="#projects">Explore Projects ↘</a><a class="btn secondary" href="#contact">Contact Me</a></div>
+<header>
+  <div class="container">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#home">MOHAMED <span>ABDELBaky</span></a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="eyebrow">Electrical Engineering Portfolio</div>
+      <h1>Mohamed Abdelbaky</h1>
+      <p>Electrical Engineer focused on building technical knowledge, developing practical design skills, and delivering clear, organized engineering work.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#projects">Explore Projects</a>
+        <a class="btn btn-outline" href="#contact">Get in Touch</a>
+      </div>
     </div>
-    <div class="hero-art" aria-label="Abstract electrical engineering drawing"><div class="grid-art"><div class="wire one"></div><div class="wire two"></div><span class="node a"></span><span class="node b"></span><span class="node c"></span><span class="node d"></span></div><div class="art-label">DESIGN · CALCULATIONS · TECHNICAL DOCUMENTATION</div></div>
-  </header>
+  </section>
+
   <section id="about">
-    <div class="section-head"><div class="eyebrow">01 / Profile</div><h2>About Me</h2><p>Replace this sample text with a short, accurate summary of your experience and professional goals.</p></div>
-    <div class="about-grid"><div><h3 style="color:var(--navy)">Professional Summary</h3><p>I am an Electrical Design Engineer interested in developing clear, coordinated, and practical electrical engineering solutions. My portfolio showcases selected work, technical drawings, and calculation outputs.</p><p class="hint">Tip: add your years of experience, sectors you've worked in, and your specific responsibilities. Avoid listing work you did not personally perform.</p></div>
-      <div class="panel"><h3>Career Focus</h3><div class="chips"><span class="chip">Electrical Design</span><span class="chip">Lighting Design</span><span class="chip">Power Distribution</span><span class="chip">Load Calculations</span><span class="chip">Technical Office</span></div></div>
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">About Me</div><h2>Engineering with a practical mindset</h2></div>
+      <div class="about-grid">
+        <div class="card">
+          <h3>Hello, I'm Mohamed.</h3>
+          <p>I am an Electrical Engineer building my professional portfolio around electrical design, lighting calculations, technical drawings, and engineering documentation. I use this website to present my skills and selected projects in one place.</p>
+          <div class="highlight">My goal is to keep learning, strengthen my design workflow, and contribute to reliable, well-coordinated engineering projects.</div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>Electrical Engineering</strong><span>Professional field</span></div>
+          <div class="stat"><strong>AutoCAD</strong><span>Technical drawings</span></div>
+          <div class="stat"><strong>DIALux & Excel</strong><span>Lighting design and documentation</span></div>
+        </div>
+      </div>
     </div>
   </section>
-  <section id="skills" style="background:#fbfdfe"><div class="section-head"><div class="eyebrow">02 / Expertise</div><h2>Technical Skills</h2><p>Keep only the skills you can confidently discuss in an interview.</p></div>
-    <div class="skills"><div class="skill"><div class="num">01</div><h3>Lighting Design</h3><p>Lighting layouts, luminaire selection, and illuminance calculations.</p></div><div class="skill"><div class="num">02</div><h3>Power Distribution</h3><p>Electrical layouts, circuiting, and panel schedules.</p></div><div class="skill"><div class="num">03</div><h3>Load Calculations</h3><p>Connected loads, demand loads, and load schedules.</p></div><div class="skill"><div class="num">04</div><h3>Software</h3><p>AutoCAD, DIALux evo, Microsoft Excel, and other tools you use.</p></div></div>
+
+  <section id="skills" style="background:#fff">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Technical Skills</div><h2>Tools I work with</h2><p class="intro">A selection of tools used for drafting, lighting design, calculations, and organized engineering documentation.</p></div>
+      <div class="skills-grid">
+        <article class="skill-card"><div class="skill-icon">AC</div><h3>AutoCAD</h3><p>Creating and editing engineering drawings, layouts, and technical plans.</p></article>
+        <article class="skill-card"><div class="skill-icon">D</div><h3>DIALux</h3><p>Lighting layouts, illumination calculations, and reviewing lighting results.</p></article>
+        <article class="skill-card"><div class="skill-icon">X</div><h3>Microsoft Excel</h3><p>Engineering schedules, calculations, data organization, and reports.</p></article>
+      </div>
+    </div>
   </section>
-  <section id="projects" class="projects"><div class="section-head"><div class="eyebrow">03 / Selected Work</div><h2>Projects</h2><p>Add your real projects below. Replace each placeholder with a drawing, rendered view, or calculation result and a concise explanation.</p></div>
-    <div class="project-grid">
-      <article class="project"><div class="project-visual"><div class="plus">＋</div><strong>ADD PROJECT IMAGE</strong><span class="hint">Electrical layout / CAD drawing / 3D view</span></div><div class="project-body"><span class="tag">PROJECT 01</span><h3>Project Name</h3><p>Briefly describe the project, your role, the design scope, and the main deliverables.</p><div class="project-controls"><label class="small-btn">Choose image <input type="file" accept="image/*" hidden onchange="previewImage(this)"></label><button class="small-btn" onclick="editProject(this)">Edit details</button></div></div></article>
-      <article class="project"><div class="project-visual"><div class="plus">＋</div><strong>ADD PROJECT IMAGE</strong><span class="hint">Electrical layout / CAD drawing / 3D view</span></div><div class="project-body"><span class="tag">PROJECT 02</span><h3>Project Name</h3><p>Briefly describe the project, your role, the design scope, and the main deliverables.</p><div class="project-controls"><label class="small-btn">Choose image <input type="file" accept="image/*" hidden onchange="previewImage(this)"></label><button class="small-btn" onclick="editProject(this)">Edit details</button></div></div></article>
-      <article class="project"><div class="project-visual"><div class="plus">＋</div><strong>ADD PROJECT IMAGE</strong><span class="hint">Calculation / schedule / technical report</span></div><div class="project-body"><span class="tag">PROJECT 03</span><h3>Project Name</h3><p>Briefly describe the project, your role, the design scope, and the main deliverables.</p><div class="project-controls"><label class="small-btn">Choose image <input type="file" accept="image/*" hidden onchange="previewImage(this)"></label><button class="small-btn" onclick="editProject(this)">Edit details</button></div></div></article>
-      <article class="project"><div class="project-visual"><div class="plus">＋</div><strong>ADD PROJECT IMAGE</strong><span class="hint">Electrical layout / CAD drawing / 3D view</span></div><div class="project-body"><span class="tag">PROJECT 04</span><h3>Project Name</h3><p>Briefly describe the project, your role, the design scope, and the main deliverables.</p><div class="project-controls"><label class="small-btn">Choose image <input type="file" accept="image/*" hidden onchange="previewImage(this)"></label><button class="small-btn" onclick="editProject(this)">Edit details</button></div></div></article>
-    </div><p class="hint" style="margin-top:1.2rem">Note: image previews and text edits in this starter template are temporary in your browser. For permanent changes, replace placeholders in index.html and republish.</p>
+
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Selected Work</div><h2>Projects</h2><p class="intro">This section is ready for your engineering projects. Replace these placeholders with your own work when you are ready.</p></div>
+      <div class="project-grid">
+        <article class="project-card"><span class="tag">Lighting Design</span><h3>Lighting Design Project</h3><p>Add a short description of your project, the design goals, the software used, and the key results. You can also add drawings or screenshots later.</p></article>
+        <article class="project-card"><span class="tag">Electrical Drawings</span><h3>Electrical Layout Project</h3><p>Add details about the electrical layout, drawing scope, assumptions, and deliverables. Replace this text with your own project information.</p></article>
+      </div>
+    </div>
   </section>
-  <section id="contact" class="contact"><div class="section-head"><div class="eyebrow">04 / Get in Touch</div><h2>Let's Connect</h2><p>Update the sample contact information before publishing the site.</p></div><div class="contact-grid"><div class="contact-card"><small>EMAIL</small><div>your.email@example.com</div></div><div class="contact-card"><small>PHONE</small><div>+20 XXX XXX XXXX</div></div><div class="contact-card"><small>LINKEDIN</small><div>linkedin.com/in/your-profile</div></div><div class="contact-card"><small>LOCATION</small><div>Egypt</div></div></div></section>
-  <footer><span>© <span id="year"></span> Mohamed Abdelbaky</span><span>Electrical Design Engineer Portfolio</span></footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function previewImage(input) { const file=input.files&&input.files[0]; if(!file)return; const visual=input.closest('.project').querySelector('.project-visual'); const reader=new FileReader(); reader.onload=e=>{visual.innerHTML='';visual.style.padding='0';visual.style.background='#eaf4f9';const img=document.createElement('img');img.src=e.target.result;img.alt='Project preview';img.style.width='100%';img.style.height='260px';img.style.objectFit='contain';visual.appendChild(img);};reader.readAsDataURL(file); }
-    function editProject(button) { const card=button.closest('.project-body');const title=card.querySelector('h3');const desc=card.querySelector('p');const newTitle=prompt('Enter project name:',title.textContent);if(newTitle!==null&&newTitle.trim())title.textContent=newTitle.trim();const newDesc=prompt('Enter a short project description:',desc.textContent);if(newDesc!==null&&newDesc.trim())desc.textContent=newDesc.trim(); }
-  </script>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div><h2>Let's connect</h2><p>Interested in discussing engineering opportunities or my work? Add your preferred email address and LinkedIn profile to make it easy for recruiters to contact you.</p></div>
+        <a class="btn btn-primary" href="mailto:YOUR_EMAIL@example.com">Email Me</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="container">© <span id="year"></span> Mohamed Abdelbaky · Electrical Engineering Portfolio</div></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
