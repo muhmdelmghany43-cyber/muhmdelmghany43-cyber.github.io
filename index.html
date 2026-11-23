@@ -788,10 +788,183 @@ nav a:focus-visible {
 
 
 
+
+
+    /* Final site-wide refinements */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--cyan);
+      color: var(--navy);
+      font-weight: 800;
+      transform: translateY(-160%);
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 4px;
+    }
+
+    .section-head {
+      position: relative;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+    }
+
+    .panel,
+    .skill-card,
+    .project-card,
+    .contact-item {
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .panel:hover,
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 48px rgba(14, 35, 62, .12);
+    }
+
+    .skill-card:hover {
+      border-color: #bfdcf7;
+    }
+
+    .project-card:hover {
+      border-color: #bfdcf7;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(98, 215, 237, .55);
+      background: rgba(255, 255, 255, .07);
+    }
+
+    .contact-item a {
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .contact-item a:hover {
+      color: var(--cyan);
+      text-decoration: underline;
+    }
+
+    .tool-pills span {
+      transition: background-color .2s ease, border-color .2s ease;
+    }
+
+    .tool-pills span:hover {
+      background: rgba(98, 215, 237, .12);
+      border-color: rgba(98, 215, 237, .55);
+    }
+
+    ::selection {
+      background: rgba(98, 215, 237, .35);
+      color: var(--navy);
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid {
+        gap: 34px;
+      }
+
+      .about-grid {
+        gap: 18px;
+      }
+
+      .hero {
+        padding: 76px 0 70px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      html {
+        scroll-padding-top: 72px;
+      }
+
+      .nav {
+        gap: 12px;
+      }
+
+      .brand {
+        font-size: .92rem;
+      }
+
+      .hero {
+        padding: 54px 0;
+      }
+
+      .hero-card,
+      .panel,
+      .skill-card,
+      .contact-item {
+        border-radius: 13px;
+      }
+
+      .hero-card {
+        padding: 22px;
+      }
+
+      .actions .btn {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+
+      .tools {
+        padding: 21px;
+      }
+
+      .section-head {
+        margin-bottom: 26px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
   </style>
 </head>
 
 <body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- Navigation -->
   <header>
@@ -805,11 +978,12 @@ nav a:focus-visible {
         class="menu-toggle"
         aria-label="Open navigation menu"
         aria-expanded="false"
+        aria-controls="navigation"
         onclick="toggleMenu()">
         ☰
       </button>
 
-      <nav id="navigation">
+      <nav id="navigation" aria-label="Main navigation">
         <a href="#about" onclick="closeMenu()">About</a>
         <a href="#skills" onclick="closeMenu()">Skills</a>
         <a href="#projects" onclick="closeMenu()">Projects</a>
@@ -819,7 +993,7 @@ nav a:focus-visible {
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- Home -->
     <section class="hero" id="home">
@@ -937,6 +1111,7 @@ nav a:focus-visible {
               <span class="tag">Power Distribution</span>
               <span class="tag">Load Calculations</span>
               <span class="tag">Single Line Diagrams</span>
+              <span class="tag">Light Current Systems</span>
             </div>
           </article>
 
@@ -1031,7 +1206,17 @@ nav a:focus-visible {
           </article>
 
           <article class="skill-card">
-            <div class="skill-number">06 / DOCUMENTATION</div>
+            <div class="skill-number">06 / LOW CURRENT</div>
+            <h3>Light Current Systems</h3>
+            <p>
+              Studying the fundamentals of low-current systems, including
+              fire alarm, CCTV, data networks, access control, and structured
+              cabling.
+            </p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-number">07 / DOCUMENTATION</div>
             <h3>Technical Documentation</h3>
             <p>
               Organizing engineering calculations, schedules, and
@@ -1230,10 +1415,10 @@ nav a:focus-visible {
     function toggleMenu() {
       const nav = document.getElementById("navigation");
       const btn = document.querySelector(".menu-toggle");
-
       const isOpen = nav.classList.toggle("open");
 
       btn.setAttribute("aria-expanded", String(isOpen));
+      btn.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
       btn.textContent = isOpen ? "×" : "☰";
     }
 
@@ -1243,8 +1428,15 @@ nav a:focus-visible {
 
       nav.classList.remove("open");
       btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Open navigation menu");
       btn.textContent = "☰";
     }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
