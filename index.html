@@ -444,12 +444,26 @@
     }
 
     .project-image {
-      min-height: 150px;
+      min-height: 190px;
+      position: relative;
       display: grid;
       place-items: center;
+      overflow: hidden;
       background: linear-gradient(135deg, #eaf2fb, #f6f9fd);
       color: #71839a;
       text-align: center;
+      padding: 20px;
+    }
+
+    .project-preview {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: contain;
+      background: #f7faff;
+    }
+
+    .project-fallback {
       padding: 20px;
     }
 
@@ -479,6 +493,33 @@
       margin: 0;
       color: var(--muted);
       font-size: .92rem;
+    }
+
+    .project-files {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .project-file-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 11px;
+      border: 1px solid #d7e5f4;
+      border-radius: 8px;
+      background: #f7faff;
+      color: #175c99;
+      font-size: .82rem;
+      font-weight: 750;
+      transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+
+    .project-file-link:hover {
+      background: #eaf4ff;
+      border-color: #a9cfee;
+      transform: translateY(-1px);
     }
 
     .project-placeholder {
@@ -1248,7 +1289,7 @@ nav a:focus-visible {
       </div>
     </section>
 
-    <!-- Projects: reserved for later -->
+    <!-- Projects: placeholders ready for images, PDF reports, and AutoCAD files -->
     <section id="projects">
       <div class="container">
 
@@ -1258,102 +1299,97 @@ nav a:focus-visible {
           <h2 class="section-title">Projects</h2>
 
           <p class="section-intro">
-            This section is reserved for practical projects and will be
-            completed when the drawings and calculations are ready.
+            A selection of electrical design work. Project previews, PDF reports,
+            and AutoCAD DWG drawings can be opened from each project card.
           </p>
         </div>
 
         <div class="project-note">
-          <strong>Projects will be added later.</strong>
-          The placeholders below are intentionally retained for now.
-          When your work is ready, replace each placeholder with real
-          drawings, calculation results, or project images and a short
-          explanation of your contribution.
+          <strong>Project files can be added whenever they are ready.</strong>
+          For each project, upload its preview image, PDF, and DWG file to the
+          matching folder in your GitHub repository. The links below are prepared
+          for those files; replace the sample files with your actual project files.
         </div>
 
         <div class="project-grid">
 
           <article class="project-card">
-            <div class="project-image">
-              <div>
-                <span class="plus">＋</span>
-                Electrical layout / CAD drawing
-              </div>
-            </div>
-
+            <a class="project-image" href="projects/project-01/preview.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open Project 01 preview image">
+              <img class="project-preview" src="projects/project-01/preview.jpg" alt="Project 01 electrical layout preview" onerror="this.style.display='none'; this.parentElement.style.textDecoration='none'; this.parentElement.innerHTML='<div class=&quot;project-fallback&quot;><span class=&quot;plus&quot;>＋</span>Electrical layout / CAD drawing<br><small>Upload preview.jpg to show the project image</small></div>';">
+            </a>
             <div class="project-body">
               <div class="project-label">PROJECT 01</div>
-              <h3>Project to be added</h3>
+              <h3>Building Electrical Layout</h3>
               <p>
-                Add the project scope, your role, and the main design
-                deliverables when ready.
+                Add a short description of the project, your role, and the main
+                electrical design deliverables when ready.
               </p>
-              <span class="project-placeholder">
-                Placeholder — update later
-              </span>
+              <div class="project-files">
+                <a class="project-file-link" href="projects/project-01/preview.jpg" target="_blank" rel="noopener noreferrer">View Image ↗</a>
+                <a class="project-file-link" href="projects/project-01/report.pdf" target="_blank" rel="noopener noreferrer">View PDF ↗</a>
+                <a class="project-file-link" href="projects/project-01/drawing.dwg" download>Download DWG ↓</a>
+              </div>
+              <span class="project-placeholder">Replace sample file paths with your uploaded files</span>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-image">
-              <div>
-                <span class="plus">＋</span>
-                Lighting design / DIALux report
-              </div>
-            </div>
-
+            <a class="project-image" href="projects/project-02/preview.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open Project 02 preview image">
+              <img class="project-preview" src="projects/project-02/preview.jpg" alt="Project 02 lighting design preview" onerror="this.style.display='none'; this.parentElement.style.textDecoration='none'; this.parentElement.innerHTML='<div class=&quot;project-fallback&quot;><span class=&quot;plus&quot;>＋</span>Lighting design / DIALux report<br><small>Upload preview.jpg to show the project image</small></div>';">
+            </a>
             <div class="project-body">
               <div class="project-label">PROJECT 02</div>
-              <h3>Project to be added</h3>
+              <h3>Lighting Design & DIALux</h3>
               <p>
-                Add lighting layouts, calculation results, and a short
-                project description when ready.
+                Add lighting layouts, illuminance calculation results, and a
+                brief explanation of the design objective.
               </p>
-              <span class="project-placeholder">
-                Placeholder — update later
-              </span>
+              <div class="project-files">
+                <a class="project-file-link" href="projects/project-02/preview.jpg" target="_blank" rel="noopener noreferrer">View Image ↗</a>
+                <a class="project-file-link" href="projects/project-02/report.pdf" target="_blank" rel="noopener noreferrer">View PDF ↗</a>
+                <a class="project-file-link" href="projects/project-02/drawing.dwg" download>Download DWG ↓</a>
+              </div>
+              <span class="project-placeholder">Replace sample file paths with your uploaded files</span>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-image">
-              <div>
-                <span class="plus">＋</span>
-                Load calculations / schedules
-              </div>
-            </div>
-
+            <a class="project-image" href="projects/project-03/preview.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open Project 03 preview image">
+              <img class="project-preview" src="projects/project-03/preview.jpg" alt="Project 03 load calculations preview" onerror="this.style.display='none'; this.parentElement.style.textDecoration='none'; this.parentElement.innerHTML='<div class=&quot;project-fallback&quot;><span class=&quot;plus&quot;>＋</span>Load calculations / schedules<br><small>Upload preview.jpg to show the project image</small></div>';">
+            </a>
             <div class="project-body">
               <div class="project-label">PROJECT 03</div>
-              <h3>Project to be added</h3>
+              <h3>Electrical Load Calculations</h3>
               <p>
-                Add relevant calculations or schedules and explain
-                the design objective.
+                Add relevant calculations or schedules and explain the purpose
+                of the electrical load assessment.
               </p>
-              <span class="project-placeholder">
-                Placeholder — update later
-              </span>
+              <div class="project-files">
+                <a class="project-file-link" href="projects/project-03/preview.jpg" target="_blank" rel="noopener noreferrer">View Image ↗</a>
+                <a class="project-file-link" href="projects/project-03/report.pdf" target="_blank" rel="noopener noreferrer">View PDF ↗</a>
+                <a class="project-file-link" href="projects/project-03/drawing.dwg" download>Download DWG ↓</a>
+              </div>
+              <span class="project-placeholder">Replace sample file paths with your uploaded files</span>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-image">
-              <div>
-                <span class="plus">＋</span>
-                Single Line Diagram
-              </div>
-            </div>
-
+            <a class="project-image" href="projects/project-04/preview.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open Project 04 preview image">
+              <img class="project-preview" src="projects/project-04/preview.jpg" alt="Project 04 single line diagram preview" onerror="this.style.display='none'; this.parentElement.style.textDecoration='none'; this.parentElement.innerHTML='<div class=&quot;project-fallback&quot;><span class=&quot;plus&quot;>＋</span>Single Line Diagram<br><small>Upload preview.jpg to show the project image</small></div>';">
+            </a>
             <div class="project-body">
               <div class="project-label">PROJECT 04</div>
-              <h3>Project to be added</h3>
+              <h3>Single Line Diagram (SLD)</h3>
               <p>
-                Add the SLD and a brief explanation of the
+                Add the SLD and a short explanation of the electrical
                 distribution system.
               </p>
-              <span class="project-placeholder">
-                Placeholder — update later
-              </span>
+              <div class="project-files">
+                <a class="project-file-link" href="projects/project-04/preview.jpg" target="_blank" rel="noopener noreferrer">View Image ↗</a>
+                <a class="project-file-link" href="projects/project-04/report.pdf" target="_blank" rel="noopener noreferrer">View PDF ↗</a>
+                <a class="project-file-link" href="projects/project-04/drawing.dwg" download>Download DWG ↓</a>
+              </div>
+              <span class="project-placeholder">Replace sample file paths with your uploaded files</span>
             </div>
           </article>
 
