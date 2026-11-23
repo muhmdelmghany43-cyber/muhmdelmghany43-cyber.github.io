@@ -756,6 +756,49 @@
     animation: none;
   }
 }
+/* Navigation Improvements */
+
+#navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#navigation a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+#navigation a:hover {
+  background-color: rgba(100, 140, 160, 0.12);
+  transform: translateY(-2px);
+}
+
+#navigation a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  #navigation {
+    gap: 4px;
+  }
+
+  #navigation a {
+    padding: 9px 11px;
+    font-size: 0.95rem;
+  }
+}
+
 
   </style>
 </head>
