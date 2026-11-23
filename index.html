@@ -713,6 +713,48 @@
   .hero-card::before {
     margin-bottom: 16px;
   }
+}/* Hero Entrance Animation */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: fadeUp 0.7s ease-out both;
+  animation-delay: 0.1s;
+}
+
+.hero-copy {
+  animation: fadeUp 0.7s ease-out both;
+  animation-delay: 0.25s;
+}
+
+.hero .actions {
+  animation: fadeUp 0.7s ease-out both;
+  animation-delay: 0.4s;
+}
+
+.hero-card {
+  animation: fadeUp 0.8s ease-out both;
+  animation-delay: 0.3s;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero h1,
+  .hero-copy,
+  .hero .actions,
+  .hero-card {
+    animation: none;
+  }
 }
 
   </style>
