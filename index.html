@@ -611,6 +611,63 @@
         font-size: 2.8rem;
       }
     }
+/* Home Page Visual Improvements */
+.hero h1 {
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  max-width: 850px;
+}
+
+.hero-copy {
+  max-width: 650px;
+  line-height: 1.85;
+}
+
+.hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hero .actions .btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero .actions .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(20, 60, 80, 0.12);
+}
+
+.hero-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(20, 60, 80, 0.09);
+}
+
+.focus-list {
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
+    letter-spacing: -0.8px;
+  }
+
+  .hero .actions {
+    gap: 10px;
+  }
+
+  .hero .actions .btn {
+    max-width: 100%;
+  }
+}
+
   </style>
 </head>
 
